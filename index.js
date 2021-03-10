@@ -2,7 +2,16 @@ const express = require('express');
 const app = express();
 const port =  process.env.PORT || 3001;
 
+const expressLayouts = require('express-ejs-layouts');
 
+
+app.use(express.static('./assets'));
+//extract sytle andscripts from sub pages into the layout
+app.set('layout extractStyles', true);
+app.set('layout extractScripts', true);
+
+
+app.use(expressLayouts);
 
 //set up the view engine
 app.set('view engine', 'ejs');
