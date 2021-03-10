@@ -1,0 +1,23 @@
+[
+    {
+        "regNo":"regNo",
+        "firstName":"firstName",
+        "middleName":"middleName",
+        "lastName":"lastName",
+        "fatherFirstName":"fatherFirstName",
+        "fatherMiddleName":"fatherMiddleName",
+        "fatherLastName":"fatherLastName",
+        "motherFirstName":"motherFirstName",
+        "motherMiddleName":"motherMiddleName",
+        "motherLastName":"motherLastName",
+        "emailSelf":"emailSelf",
+        "emailCollege":"emailCollege",
+        "phoneNo":"phoneNo",
+        "phoneNoFather":"phoneNoFather",
+        "income":"income",
+        "documents":{
+            "aadharNo":"aadharNo",
+            "proofofIncome":""
+        }
+    }
+]

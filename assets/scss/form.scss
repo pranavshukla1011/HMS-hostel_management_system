@@ -1,0 +1,79 @@
+//iampranavshukla
+
+@import "variables.scss";
+* {
+  box-sizing: border-box;
+}
+
+body {
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.container {
+  background-color: rgba(0, 0, 0, 0.4);
+  padding: 4% 15%;
+  border-radius: 5px;
+}
+
+.container h1 {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.container a {
+  text-decoration: none;
+  color: $primary-color;
+}
+
+form {
+  padding-top: 1rem;
+}
+
+.form-control {
+  position: relative;
+  margin: 20px 0 40px;
+  width: 300px;
+}
+
+.form-control input {
+  font-family: "Amita", cursive;
+  background-color: transparent;
+  border: 0;
+  border-bottom: 2px solid #fff;
+  display: block;
+  width: 100%;
+  padding: 15px 0;
+  font-size: 18px;
+  color: #fff;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.4);
+}
+
+.form-control input:focus,
+.form-control input:valid {
+  outline: 0;
+  border-bottom-color: $primary-color;
+}
+
+.form-control label {
+  position: absolute;
+  top: 15px;
+  left: 0;
+  font-size: 10px;
+}
+
+.form-control label span {
+  display: inline-block;
+  font-size: 13px;
+  min-width: 5px;
+  transition: transform 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+.form-control input:focus + label span,
+.form-control input:valid + label span {
+  color: $primary-color;
+  transform: translateY(-30px);
+}

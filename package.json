@@ -1,0 +1,23 @@
+{
+  "dependencies": {
+    "node-sass": "^5.0.0"
+  },
+  "name": "hms-hostel_management_system",
+  "version": "1.0.0",
+  "main": "index.js",
+  "devDependencies": {},
+  "scripts": {
+    "sass":  "node-sass -w assets/scss/ -o assets/dist/css/ --recursive"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/pranavshukla1011/HMS-hostel_management_system.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/pranavshukla1011/HMS-hostel_management_system/issues"
+  },
+  "homepage": "https://github.com/pranavshukla1011/HMS-hostel_management_system#readme",
+  "description": ""
+}
