@@ -1,13 +1,16 @@
 {
   "dependencies": {
-    "node-sass": "^5.0.0"
+    "express": "^4.17.1",
+    "node-sass": "^5.0.0",
+    "nodemon": "^2.0.7"
   },
   "name": "hms-hostel_management_system",
   "version": "1.0.0",
   "main": "index.js",
   "devDependencies": {},
   "scripts": {
-    "sass":  "node-sass -w assets/scss/ -o assets/dist/css/ --recursive"
+    "sass": "node-sass -w assets/scss/ -o assets/dist/css/ --recursive",
+    "start": "nodemon index.js"
   },
   "repository": {
     "type": "git",
