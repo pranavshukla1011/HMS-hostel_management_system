@@ -1,0 +1,42 @@
+@import "variables.scss";
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #333;
+}
+
+.button {
+  font-size: 1.25rem;
+  padding: 10px 25px;
+  background: transparent;
+  color: white;
+  margin: 50px;
+  border: none;
+  position: relative;
+  outline: none;
+}
+.button:hover {
+  transition: all 0.6s linear;
+  background-color: white;
+  color: black;
+}
+.button:before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  background: #333;
+  z-index: -1;
+}
+.button:focus:before {
+  transform: scale(2);
+  transition: all 0.4s linear;
+  opacity: 0;
+}

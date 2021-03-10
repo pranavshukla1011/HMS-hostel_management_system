@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+    <link rel="stylesheet" href="css/utilities.css">
+    <link rel="stylesheet" href="css/form.css">
+    <link rel="stylesheet" href="css/student_login.css">
+    <title>Login | Student</title>
+</head>
+<body>
+    <div class="container" data-aos="flip-left" data-aos-duration="500">
+        <h1 data-aos="fade-down" data-aos-duration="700">Login via your Student ID</h1>
+  
+        <form>
+          <div class="form-control" data-aos="fade-up-right" data-aos-duration="1000">
+            <input type="number" id="regNo" required />
+            <label for="regNo">Enter Registration Number...</label>
+          </div>
+          <div class="form-control" data-aos="fade-up-left" data-aos-duration="1000">
+            <input type="password" id="aadharNo" required />
+            <label for="aadharNo">Enter Aadhar Number...</label>
+          </div>
+          <div class="form-control" data-aos="fade-up-right" data-aos-duration="1000">
+            <input type="password" id="password" required />
+            <label for="password"> Password</label>
+          </div>
+  
+          <button class="button" data-aos="zoom-in-up" data-aos-duration="1000">Login</button>
+          <p class="text" data-aos="zoom-in" data-aos-duration="2000">Don't have an account? <a href="https://nitj.ac.in">Register</a><span style="margin-left:3rem"><a href="index.html">Go Back</a></span></p>
+
+        </form>
+      </div>
+</div>
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+     AOS.init();
+    </script>
+    <script src="js/form.js"></script>
+    
+</body>
+</html>
