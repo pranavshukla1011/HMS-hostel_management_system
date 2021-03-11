@@ -2,9 +2,20 @@ const Student = require('../models/student');
 
 
 module.exports.profile = function(req, res){
-    return res.render('student_profile',{
-        title:'Student Profile'
-    })
+    if(req.cookies.student_id){
+        Student.findById(req.cookies.student_id, function(err, student){
+            if(student){
+                return res.render('student_profile',{
+                    title: "Student Profile",
+                    student: student
+                });
+            }
+            return res.redirect('/students/sign-in');
+        });
+    }else{
+        return res.redirect('/students/sign-in');
+    }
+    
 }
 
 //render the sign up page
@@ -22,7 +33,7 @@ module.exports.signIn = function(req, res){
 }
 //get the sign up data
 module.exports.create = function(req, res){
-    //TODO Later
+    
     if(req.body.password !== req.body.confirm_password){
         console.log("password unmactched");
         return res.redirect('back');
@@ -50,4 +61,28 @@ module.exports.create = function(req, res){
 //sign-in and create a session for the user
 module.exports.createSession = function(req, res){
     //TODO LATER
+    //steps to authenticate
+    //find the user
+    Student.findOne({ regNo: req.body.regNo }, function(err, student) {
+        if (err) { console.log('error in finding user in signing in'); return; }
+        //handle user found
+        if (student) {
+            //handle password which dont match
+            if (student.password != req.body.password) {
+               console.log("password doesnot matched");
+                return res.redirect('back');
+            }
+
+            //handle session creation
+            res.cookie('student_id', student.id);
+            console.log("entering profile");
+            return res.redirect('/students/profile');
+
+        } else {
+            //handle user not found
+            return res.redirect('back');
+
+
+        }
+    });
 }
