@@ -12,20 +12,24 @@
     <!--Import Google Icon Font-->
      <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css?family=Montserrat:300,400,500,600,700&display=swap" rel="stylesheet">
+
+   <!-- Animate on Scroll -->
+   <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+   <!-- Other css -->
   <link rel="stylesheet" href="css/index.css">
 </head>
 
 <body>
   <div class="content">
     <nav class="black">
-      <div class="nav-wrapper">
+      <div class="nav-wrapper" data-aos="fade-down" data-aos-duration="800">
         <a href="#" class="brand-logo center"><i class="fas fa-hotel"></i>HMS</a>
     </nav>
     <div class="split left">
       
       <img src="img/landing-page/pexels-cottonbro-5137788.jpg" alt="" class="student">
-      <div class="overlay">
-        <div class="text">
+      <div class="overlay" >
+        <div class="text" >
           <p class="subtitle ">Welcome to...</p>
           <h1 class="title">Admin Panel</h1>
           <h6 class="desc">Click to visit the admin panel for to manage and get records of hostelers.</h6>
@@ -50,5 +54,9 @@
   <script></script>
   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
   <script src="js/index.js"></script>
+
+  <script>  
+    AOS.init();
+  </script>
   </body>
 </html>

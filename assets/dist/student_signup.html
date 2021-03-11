@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+     <!-- Icons -->
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" integrity="sha512-HK5fgLBL+xu6dm/Ii3z4xhlSUyZgTT9tuc/hSrtw6uzJOvgRr2a9jyxxT1ely+B+xFAmJKVSTbpM/CuL7qxO8w==" crossorigin="anonymous" />
+     <!-- MaterializeCSS -->
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+     <!--Import Google Icon Font-->
+      <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+      <!-- CSS files -->
+    <link rel="stylesheet" href="css/utilities.css">
+    <link rel="stylesheet" href="css/form.css">
+    <link rel="stylesheet" href="css/student_login.css">
+    <link rel="stylesheet" href="css/student_signup.css">
+    <title>Sign Up | Student</title>
+</head>
+<body>
+    <div class="form-container" data-aos="flip-right" data-aos-duration="1000">
+        <h5 data-aos="fade-down" data-aos-duration="700">Use your Student ID to Sign Up</h5>
+        <form>
+          <div class="form-control" data-aos="fade-up-left" data-aos-duration="1500">
+            <input type="number" id="regNo" required />
+            <label for="regNo">Enter Registration Number...</label>
+          </div>
+          <div class="form-control" data-aos="fade-up-right" data-aos-duration="1500">
+            <input type="number" id="aadharNo" required />
+            <label for="aadharNo">Enter Aadhar Number...</label>
+          </div>
+          <div class="form-control" data-aos="fade-up-left" data-aos-duration="1500">
+            <input type="text" id="dob" required />
+            <label for="dob">Enter Date of Birth (dd/mm/yyyy)</label>
+          </div>
+          
+          <button class="button"><a href="student_signup2.html" data-aos="zoom-in-up" data-aos-duration="1500">Next</a></button>
+          <p class="text" data-aos="zoom-in" data-aos-duration="2000">Already have an account? <a href="student_login.html">Login</a><span style="margin-left:3rem"><a href="index1.html">Go Back</a></span></p>
+        </form>
+      </div>
+</div>
+
+ 
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        $(document).ready(function(){
+    $('.datepicker').datepicker();
+  });
+     AOS.init();
+    </script>
+    <script src="js/form.js"></script>
+    
+</body>
+</html>
