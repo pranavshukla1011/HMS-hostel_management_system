@@ -1,5 +1,14 @@
-<nav class="black">
+<header>
+  <nav>
+     <nav class="black">
     <div class="nav-wrapper">
       <a href="#" class="brand-logo center"><i class="fas fa-hotel"></i>HMS</a>
+      <% if (locals.student){ %>
+        <li>
+            <a href="/students/sign-out">Sign Out</a>
+        </li>
+      <% } %>
     </div> 
 </nav>
+
+</header>

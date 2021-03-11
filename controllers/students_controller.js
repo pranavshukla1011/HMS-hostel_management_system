@@ -77,3 +77,8 @@ module.exports.createSession = function(req, res){
     //user is signed in so we just need to redirect
     return res.redirect('/students/student-home');
 }
+
+module.exports.destrySession = function(req, res){
+    req.logout();//this function is give to req by passport.js
+    return res.redirect('/');
+}
