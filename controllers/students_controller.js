@@ -20,6 +20,9 @@ module.exports.profile = function(req, res){
 
 //render the sign up page
 module.exports.signUp = function(req, res){
+    if(req.isAuthenticated()){
+        return res.redirect('/students/profile');
+    }
     return res.render('student_sign_up',{
         title:"HMS | Sign Up"
     })
@@ -27,8 +30,18 @@ module.exports.signUp = function(req, res){
 
 //render the sign in page
 module.exports.signIn = function(req, res){
+    if(req.isAuthenticated()){
+        return res.redirect('/students/profile');
+    }
+
     return res.render('student_sign_in',{
         title:"HMS | Sign In"
+    })
+}
+//render student home page
+module.exports.studentHome = function(req,res){
+    return res.render('student_home',{
+        title: "Student | Home"
     })
 }
 //get the sign up data
@@ -60,29 +73,7 @@ module.exports.create = function(req, res){
 
 //sign-in and create a session for the user
 module.exports.createSession = function(req, res){
-    //TODO LATER
-    //steps to authenticate
-    //find the user
-    Student.findOne({ regNo: req.body.regNo }, function(err, student) {
-        if (err) { console.log('error in finding user in signing in'); return; }
-        //handle user found
-        if (student) {
-            //handle password which dont match
-            if (student.password != req.body.password) {
-               console.log("password doesnot matched");
-                return res.redirect('back');
-            }
-
-            //handle session creation
-            res.cookie('student_id', student.id);
-            console.log("entering profile");
-            return res.redirect('/students/profile');
-
-        } else {
-            //handle user not found
-            return res.redirect('back');
-
-
-        }
-    });
+    //session is created in passport.js itself
+    //user is signed in so we just need to redirect
+    return res.redirect('/students/student-home');
 }
