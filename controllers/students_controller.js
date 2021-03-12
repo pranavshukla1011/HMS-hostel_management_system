@@ -1,21 +1,13 @@
+//const { student } = require('../config/mongoose');
 const Student = require('../models/student');
 
 
 module.exports.profile = function(req, res){
-    if(req.cookies.student_id){
-        Student.findById(req.cookies.student_id, function(err, student){
-            if(student){
+   
                 return res.render('student_profile',{
                     title: "Student Profile",
-                    student: student
+                    student: Student
                 });
-            }
-            return res.redirect('/students/sign-in');
-        });
-    }else{
-        return res.redirect('/students/sign-in');
-    }
-    
 }
 
 //render the sign up page
