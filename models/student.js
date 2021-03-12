@@ -7,11 +7,6 @@ const studentSchema = new mongoose.Schema({
             unique:true
 
         },
-        email: {
-            type: String,
-            required: true,
-            unique:true
-        },
         password: {
             type: String,
             required: true
@@ -20,6 +15,15 @@ const studentSchema = new mongoose.Schema({
         aadharNo:{
             type: String,
             required: true
+        },
+        email: {
+            type: String,
+            required: true,
+            unique:true
+        },
+        name:{
+            type: String,
+            required : true
         }
         
 },{
