@@ -16,6 +16,7 @@ app.use(express.urlencoded());
 app.use(cookieParser());//calling
 
 app.use(express.static('./assets/dist'));
+const bodyParser = require('body-parser');
 //extract sytle andscripts from sub pages into the layout
 app.set('layout extractStyles', true);
 app.set('layout extractScripts', true);
@@ -48,6 +49,9 @@ app.use(session({
     )
         
 }));
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: true }));
+//app.use(session);
 
 app.use(passport.initialize());
 app.use(passport.session());
