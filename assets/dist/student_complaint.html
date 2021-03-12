@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" integrity="sha512-HK5fgLBL+xu6dm/Ii3z4xhlSUyZgTT9tuc/hSrtw6uzJOvgRr2a9jyxxT1ely+B+xFAmJKVSTbpM/CuL7qxO8w==" crossorigin="anonymous" />
+    <!-- MaterializeCSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <!--Import Google Icon Font-->
+     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+     <!-- Animate on Scroll -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+    <!-- <link rel="stylesheet" href="css/utilities.css"> -->
+    <link rel="stylesheet" href="css/form.css">
+    <link rel="stylesheet" href="css/student_page.css">
+    <title>Data | Student</title>
+</head>
+<body id="particles-js">
+    <nav class="nav-wrapper grey darken-3 " id="student-page-nav" data-aos="fade-down">
+        <div class="container">
+            <a href="#" class = "brand-logo left ">Welcome!</a>
+            <a href="#" data-target="mobile-links" class="sidenav-trigger right"><i class="material-icons">menu</i></a>
+            <ul class = "right show-on-large hide-on-med-and-down">
+                <li><a href="student_page.html">Home</a></li>
+                <li><a href="student_markAttendence.html">Mark attendence</a></li>
+                <li><a href="student_markHoliday.html">Mark Holiday</a></li>
+                <li><a href="student_complaint.html">Complaint</a></li>
+                <li><a href="student_adminContacts.html">Admin Contact</a></li>
+                <li class="profile tooltipped" data-position="right" data-tooltip = "Pranav Shukla">
+                <img src="img/student_page/photo.jpg" alt="">
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <ul class="sidenav" id="mobile-links">
+        <li class="profile-sidenav center-align">
+            <img src="img/student_page/photo.jpg" alt="">
+         </li>
+         <li class="center-align">
+            <h5 class="black-text ">Pranav Shukla</h5>
+            </li>
+         <li><a href="student_page.html">Home</a></li>
+         <li><a href="#!">Mark attendence</a></li>
+         <li><a href="#!">Mark Holiday</a></li>
+         <li><a href="#!">Complaint</a></li>
+         <li><a href="#!">Admin Contact</a></li>
+    </ul>
+    
+    
+</div>
+<!-- Student Information -->
+     
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="js/form.js"></script>
+    <script src="js/particles.js"></script>
+    <script src="js/app.js"></script>
+    <script>
+        var elem = document.querySelector('.sidenav');
+        var instance = new M.Sidenav(elem);
+        $(document).ready(function(){
+          $('.tooltipped').tooltip();
+        });
+        AOS.init();  
+        // var elem = document.querySelector('.sidenav');
+        // var instance = new M.Sidenav(elem); 
+
+        // $(document).ready(function(){
+        //     $('.tabs').tabs();
+        // });
+        // $(document).ready(function(){
+        //     $('.tabs').tabs('select_tab', 'tab_id');
+        // });
+
+        // $(document).ready(function(){
+        // $('.modal').modal();
+        // });
+    </script>
+</body>
+</html>
