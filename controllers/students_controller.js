@@ -6,7 +6,6 @@ module.exports.profile = function(req, res){
    
                 return res.render('student_profile',{
                     title: "Student Profile",
-                    student: Student
                 });
 }
 
@@ -50,7 +49,7 @@ module.exports.create = function(req, res){
         if(!student){ 
             //creating student in dB
             Student.create(req.body, function(err, student){
-                if(err){console.log('error in creating user while signing up'); return}
+                if(err){console.log('error in creating user while signing up |', err); return}
                 
                 
                 return res.redirect('/students/sign-in');
@@ -70,7 +69,7 @@ module.exports.createSession = function(req, res){
     return res.redirect('/students/student-home');
 }
 
-module.exports.destrySession = function(req, res){
+module.exports.destroySession = function(req, res){
     req.logout();//this function is give to req by passport.js
     return res.redirect('/');
 }

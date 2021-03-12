@@ -56,7 +56,7 @@ passport.checkAuthentication = function(req, res, next){
 passport.setAuthenticatedStudent = function(req, res, next){
     if(req.isAuthenticated()){
         //req.student contains the current signed in student from the session cookie and we are just sending this to the locals for the views
-        res.locals.student = req.student;
+        res.locals.user = req.user;
     }
     next();
 }

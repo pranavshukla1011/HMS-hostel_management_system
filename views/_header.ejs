@@ -3,11 +3,16 @@
      <nav class="black">
     <div class="nav-wrapper">
       <a href="#" class="brand-logo center"><i class="fas fa-hotel"></i>HMS</a>
-      <% if (locals.student){ %>
+      <% if (locals.user){ %>
         <li>
             <a href="/students/sign-out">Sign Out</a>
         </li>
-      <% } %>
+      <% } else{%>
+
+      <li>
+        <a href="/students/sign-in">Sign In bro</a>
+      </li>
+      <%}%>
     </div> 
 </nav>
 
