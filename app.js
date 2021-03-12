@@ -4,7 +4,7 @@ const app = express();
 
 const port =  process.env.PORT || 3005;
 
-const expressLayouts = require('express-ejs-layouts');
+//const expressLayouts = require('express-ejs-layouts');
 const db = require('./config/mongoose');
 const session = require('express-session');//used for session-cookie
 const passport = require('passport');
@@ -16,13 +16,17 @@ app.use(express.urlencoded());
 app.use(cookieParser());//calling
 
 app.use(express.static('./assets/dist'));
+
+
 const bodyParser = require('body-parser');
+
+
 //extract sytle andscripts from sub pages into the layout
-app.set('layout extractStyles', true);
-app.set('layout extractScripts', true);
+// app.set('layout extractStyles', true);
+// app.set('layout extractScripts', true);
 
 
-app.use(expressLayouts);
+//app.use(expressLayouts);
 
 //set up the view engine
 app.set('view engine', 'ejs');
