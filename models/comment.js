@@ -1,24 +1,23 @@
 const mongoose = require('mongoose');
 
-const complaintSchema = new mongoose.Schema({
+
+const commentSchema = new mongoose.Schema({
     content: {
         type: String,
         required: true
     },
+    // comment belongs to a user
     student: {
         type: mongoose.Schema.Types.ObjectId,
         ref: 'Student'
-    },// include the array of ids of all comments in this complaint schema itself
-    comments: [
-    {
+    },
+    complaint: {
         type: mongoose.Schema.Types.ObjectId,
-        ref: 'Comment'
+        ref: 'Complaint'
     }
-]
-
 },{
     timestamps: true
 });
 
-const Complaint = mongoose.model('Complaint', complaintSchema);
-module.exports = Complaint;
+const Comment = mongoose.model('Comment', commentSchema);
+module.exports = Comment;
