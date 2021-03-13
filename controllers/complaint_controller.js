@@ -11,13 +11,21 @@ module.exports.complaint = function(req, res){
     // });
 
     //populate the student of each complaint
-    Complaint.find({}).populate('student').exec(function(err, complaints){
+    Complaint.find({})
+    .populate('student')
+    .populate({
+        path: 'comments',
+        populate:{
+            path: 'student'
+        }
+    })
+    .exec(function(err, complaints){
         return res.render('complaint',{
             title: "Complaint Section",
             complaints : complaints
         });
     });
-   
+    
 }
 module.exports.create = function(req, res){
       Complaint.create({
