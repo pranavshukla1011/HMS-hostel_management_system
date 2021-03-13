@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%= title %></title>
+</head>
+<body>
+    <section id="feed-posts">
+        <h1>Complaints</h1>   
+        <form action="/complaints/create" id="new-post-form" method="POST">
+            <textarea name="content"  cols="30" rows="3" placeholder="Type Here..." required></textarea>
+            <input type="submit" value="Complaint">
+        </form>
+
+        <div>
+            <ul>
+                <% for(complaint of complaints){  %>
+                    <li>
+                        <p>
+                            <%= complaint.content  %>
+                            <br>
+                            <small><%= complaint.student.name %></small>
+                        </p>
+                        
+                    </li>
+                <% } %>    
+            </ul>
+        </div>
+    </section>    
+</body>
+</html>
+

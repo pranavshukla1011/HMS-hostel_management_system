@@ -5,7 +5,7 @@ console.log("router loaded");
 
 router.get('/',homeController.home);
 router.use('/students', require('./students'));
-
+router.use('/complaints', require('./complaints'));
 
 
 

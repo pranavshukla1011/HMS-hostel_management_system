@@ -4,6 +4,10 @@ const Student = require('../models/student');
 
 //authentication using passport
 
+// passport.initialize( {
+//     userProperty: 'student' // defaults to 'user' if omitted
+//    });
+
 passport.use(new LocalStrategy({
         usernameField: 'regNo'
     },
