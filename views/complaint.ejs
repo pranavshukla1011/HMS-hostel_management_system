@@ -7,17 +7,17 @@
     <title><%= title %></title>
 </head>
 <body>
-    <section id="feed-posts">
+    <section >
         <h1>Complaints</h1>   
         <!-- this check on form is not required as student is only able to see anything if he is signed in -->
         <% if(locals.user){ %>
-        <form action="/complaints/create" id="new-post-form" method="POST">
+        <form action="/complaints/create" id="new-complaint-form" method="POST">
             <textarea name="content"  cols="30" rows="3" placeholder="Type Here..." required></textarea>
             <input type="submit" value="Complaint">
         </form>
         <% } %> <!---->
 
-        <div>
+        <div id ="complaints-list-container">
             <ul>
                 <% for(complaint of complaints){  %>
                     <li>
@@ -26,7 +26,32 @@
                             <br>
                             <small><%= complaint.student.name %></small>
                         </p>
-                        
+                        <div class="complaint-comments">
+                            <% if(locals.user){%>
+                                <form action="/comments/create" method="POST">
+                                    <input type="text" name="content" placeholder="Type Here to add comment..." required>
+                                    <input type="hidden" name="complaint" value="<%= complaint._id %>">
+                                    <input type="submit" value="Add Comment">
+                                </form>
+                                   
+                            <% } %>
+                                
+        
+                            <div class="complaint-comments-list">
+                                <ul id="complaint-comments-<%= complaint._id %>">
+                                    <% for(comment of complaint.comments){%>
+                                        <p>
+                                            <%= comment.content %>
+                                           
+                                        </p>
+                                        <br>
+                                        <small>
+                                            <%= comment.student.name %>
+                                        </small>
+                                    <%} %>
+                                </ul>
+                            </div>
+                        </div>
                     </li>
                 <% } %>    
             </ul>
