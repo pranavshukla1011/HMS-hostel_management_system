@@ -34,7 +34,7 @@
                 <% if (locals.user){ %>
                     <li><a href="/students/sign-out">Sign Out</a></li>
                 <% } %>
-                <li class="profile tooltipped" data-position="right" data-tooltip = "Pranav Shukla">
+                <li class="profile tooltipped" data-position="right" data-tooltip = "<%= complaint.student.name %>">
                 <img src="/dist/img/student_page/photo.jpg" alt="">
                 </li>
             </ul>
@@ -100,7 +100,7 @@
                                 
                                 <div class="row" data-aos="fade-up" data-aos-duration="1500">
                                     <div class="col s12">
-                                     <button class="button" type="submit">Post Complaint</button></button>
+                                     <button class="button" type="submit">Post Complaint</button>
                                     </div>
                                 </div>
                             </form>
@@ -121,16 +121,17 @@
                             </ul>
                         </div>
                     </div>
-
+                    <!--  -->
                     <% if(complaints <= 0) {%>
                         <div style="color: black; background-color: #616161;">
                             <h5>NO COMPLAINT</h5>
                         </div>
                     <%}%>   
+                    <!--  -->
 
                     <% for(complaint of complaints){  %>
                         <% if(complaint.visibility == 1){%>
-                            <% if(complaint.ctype == 'Public' ){%>
+                            <% if(complaint.ctype == 'Public'){%>
                             <div id="public-complaints">
                                 
                                 <div class=" complaintCard public solved-complaint  container white" >
@@ -161,8 +162,6 @@
                             </div>
                             <% }else{ %>
                             <div id="anonymous-complaint">
-                                
-
                                 <div class=" complaintCard anonymous public solved-complaint  container white" >
                                     <div class="complaintImg">
                                         <img src="/dist/img/student_complaint/anonymous.jpeg.svg" class="responsive-img" alt="">
@@ -187,12 +186,10 @@
                                         </div>
                                     </div>
                                 </div>
-
                             </div>
-                            <% }}} %>
-                     
-
-
+                            <% }%>
+                        <% }%>
+                    <% }%>
                     
                 </div>
             </div>
