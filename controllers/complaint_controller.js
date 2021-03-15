@@ -1,43 +1,44 @@
 const Complaint = require('../models/complaint');
 
 
-module.exports.complaint = function(req, res){
-    //display all complaints
-    // Complaint.find({}, function(err, complaints){
-    //     return res.render('complaint',{
-    //         title: "Complaint Section",
-    //         complaints : complaints
-    //     });
-    // });
-
-    //populate the student of each complaint
-    Complaint.find({})
+module.exports.complaint = async function(req, res){
+   try {
+    let complaints = await Complaint.find({})
     .populate('student')
     .populate({
         path: 'comments',
         populate:{
             path: 'student'
         }
-    })
-    .exec(function(err, complaints){
-        return res.render('complaint1',{
-            title: "Complaint Section",
-            complaints : complaints
-        });
     });
+    return res.render('complaint1',{
+        title: "Complaint Section",
+        complaints : complaints
+    });
+
+   } catch (error) {
+       console.log('Error', err);
+       return;
+   }
     
+
 }
-module.exports.create = function(req, res){
-      Complaint.create({
+module.exports.create = async function(req, res){
+    try {
+        
+      await Complaint.create({
         category: req.body.category,
         ctype: req.body.ctype,
         visibility: req.body.visibility,
         content: req.body.content,
         status: req.body.status,
         student: req.user._id,
-        
-      }, function(err, complaint){
-        if(err){console.log('error in creating a complaint'); return;}
+         });
+
         return res.redirect('back');
-    });
+  
+    } catch (error) {
+        return res.redirect('back');
+        
+    }
 }
