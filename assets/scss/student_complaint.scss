@@ -20,7 +20,7 @@
   
   
 #postComplaint{
-    margin-top: 30px;
+    margin: 30px 0;
     background-color: rgba($custom-color, 0.9);
 }
 
@@ -31,19 +31,25 @@
 #viewComplaint{
   .complaintCard{
     display:flex;
-    height:30vh;
+    height:auto;
     width:100%;
     justify-content: center;
     align-items: center;
-    margin:40px 0;
+    margin: 20px 0;
+    padding:0 10px;
     .complaintImg{
-      margin:25px;
+      margin:20px;
     }
     img{
     border-radius: 50%;
+    height:200px;
+    width:350px;
     }
     p{
       line-height: 2rem;
+    }
+    h5{
+      font-weight: bold;
     }
    h6{
      font-weight: bold;
@@ -61,3 +67,4 @@
     
   }
 }
+
