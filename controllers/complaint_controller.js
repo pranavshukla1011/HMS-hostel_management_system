@@ -20,7 +20,7 @@ module.exports.complaint = function(req, res){
         }
     })
     .exec(function(err, complaints){
-        return res.render('complaint',{
+        return res.render('complaint1',{
             title: "Complaint Section",
             complaints : complaints
         });
@@ -29,8 +29,13 @@ module.exports.complaint = function(req, res){
 }
 module.exports.create = function(req, res){
       Complaint.create({
-          content: req.body.content,
-          student: req.user._id
+        category: req.body.category,
+        ctype: req.body.ctype,
+        visibility: req.body.visibility,
+        content: req.body.content,
+        status: req.body.status,
+        student: req.user._id,
+        
       }, function(err, complaint){
         if(err){console.log('error in creating a complaint'); return;}
         return res.redirect('back');
