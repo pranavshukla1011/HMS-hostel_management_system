@@ -1,0 +1,44 @@
+.tabs .tab a {
+  color: #eeeeee; }
+  .tabs .tab a.active {
+    color: #eeeeee; }
+  .tabs .tab a:hover {
+    color: #eeeeee; }
+  .tabs .tab a:focus {
+    background-color: rgba(238, 238, 238, 0.1); }
+    .tabs .tab a:focus.active {
+      background-color: rgba(238, 238, 238, 0.1); }
+
+.tabs .indicator {
+  background-color: #81d4fa; }
+
+#postComplaint {
+  margin-top: 30px;
+  background-color: rgba(238, 238, 238, 0.9); }
+
+.button {
+  background-color: black; }
+
+#viewComplaint .complaintCard {
+  display: flex;
+  height: 30vh;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+  margin: 40px 0; }
+  #viewComplaint .complaintCard .complaintImg {
+    margin: 25px; }
+  #viewComplaint .complaintCard img {
+    border-radius: 50%; }
+  #viewComplaint .complaintCard p {
+    line-height: 2rem; }
+  #viewComplaint .complaintCard h6 {
+    font-weight: bold; }
+
+#viewComplaint .complaintSocial {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  margin-top: 10px; }
+  #viewComplaint .complaintSocial .upvote {
+    margin-right: 10px; }
