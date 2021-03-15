@@ -21,6 +21,14 @@ const complaintSchema = new mongoose.Schema({
         type: Number,
         default: 3
     },
+    Pcount: {
+        type: Number,
+        default: 0
+    },
+    Acount: {
+        type: Number,
+        default: 0
+    },
     student: {
         type: mongoose.Schema.Types.ObjectId,
         ref: 'Student'
