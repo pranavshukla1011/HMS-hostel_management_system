@@ -15,30 +15,138 @@
       <!-- CSS files -->
     <link rel="stylesheet" href="css/utilities.css">
     <link rel="stylesheet" href="css/form.css">
-    <link rel="stylesheet" href="css/student_login.css">
+    <!-- <link rel="stylesheet" href="css/student_login.css"> -->
     <link rel="stylesheet" href="css/student_signup.css">
     <title>Sign Up | Student</title>
 </head>
 <body>
-    <div class="form-container" data-aos="flip-right" data-aos-duration="1000">
+    <div class="form-container" data-aos="flip-right" data-aos-duration="1000" style="margin:40px 0">
         <h5 data-aos="fade-down" data-aos-duration="700">Use your Student ID to Sign Up</h5>
         <form>
-          <div class="form-control" data-aos="fade-up-left" data-aos-duration="1500">
+          <div class="form-control" data-aos="fade-up-right" data-aos-duration="1500">
             <input type="number" id="regNo" required />
             <label for="regNo">Enter Registration Number...</label>
           </div>
-          <div class="form-control" data-aos="fade-up-right" data-aos-duration="1500">
+          <div class="form-control" data-aos="fade-up-left" data-aos-duration="1500">
             <input type="number" id="aadharNo" required />
             <label for="aadharNo">Enter Aadhar Number...</label>
           </div>
-          <div class="form-control" data-aos="fade-up-left" data-aos-duration="1500">
+          <div class="form-control" data-aos="fade-up-right" data-aos-duration="1500">
             <input type="text" id="dob" required />
             <label for="dob">Enter Date of Birth (dd/mm/yyyy)</label>
           </div>
           
-          <button class="button" data-aos="zoom-in-up" data-aos-duration="1500">Next</button>
+          <div class="form-control" data-aos="fade-up-left" data-aos-duration="1500">
+            <input type="text" id="firstName" required />
+            <label for="firstName">Enter first Name</label>
+          </div>
           
-          <p class="text" data-aos="zoom-in" data-aos-duration="2000">Already have an account? <a href="student_login.html">Login</a><span style="margin-left:3rem"><a href="index1.html">Go Back</a></span></p>
+          <div class="form-control" data-aos="fade-up-right" data-aos-duration="1500">
+            <input type="text" id="middleName"/>
+            <label for="middleName">Enter Middle Name (optional)</label>
+          </div>
+
+          <div class="form-control" data-aos="fade-up-left" data-aos-duration="1500">
+            <input type="text" id="lastName" required/>
+            <label for="lastName">Enter Last Name</label>
+          </div>
+          
+          <div class="form-control" data-aos="fade-up-right" data-aos-duration="1500">
+            <input type="email" id="email1" required />
+            <label for="email1">Enter Institute Email ID...</label>
+          </div>
+
+          <div class="form-control" data-aos="fade-up-left" data-aos-duration="1500">
+            <input type="email" id="email2" required />
+            <label for="email2">Enter Personal Email ID...</label>
+          </div>
+
+          <div class="form-control" data-aos="fade-up-right" data-aos-duration="1500">
+            <input type="number" id="phone1" required />
+            <label for="phone1">Enter Primary Phone No.</label>
+          </div>
+          
+          <div class="form-control" data-aos="fade-up-left" data-aos-duration="1500">
+            <input type="number" id="phone2" />
+            <label for="phone2">Enter Secondary Phone No.</label>
+          </div>   
+
+          <div class="form-control" data-aos="fade-up-right" data-aos-duration="1500">
+            <input type="text" id="firstName" required />
+            <label for="firstNameF">Enter Father's first Name</label>
+          </div>
+          
+          <div class="form-control" data-aos="fade-up-left" data-aos-duration="1500">
+            <input type="text" id="middleName"/>
+            <label for="middleNameF">Enter Father's Middle Name (optional)</label>
+          </div>
+
+          <div class="form-control" data-aos="fade-up-right" data-aos-duration="1500">
+            <input type="text" id="lastName" required/>
+            <label for="lastNameF">Enter Father's Last Name (optional)</label>
+          </div>
+          
+          <div class="form-control" data-aos="fade-up-right" data-aos-duration="1500">
+            <input type="text" id="firstName" required />
+            <label for="firstNameM">Enter Mother's first Name</label>
+          </div>
+          
+          <div class="form-control" data-aos="fade-up-left" data-aos-duration="1500">
+            <input type="text" id="middleName"/>
+            <label for="middleNameM">Enter Mother's Middle Name (optional)</label>
+          </div>
+
+          <div class="form-control" data-aos="fade-up-right" data-aos-duration="1500">
+            <input type="text" id="lastName" required/>
+            <label for="lastNameM">Enter Mother's Last Name (optional)</label>
+          </div>
+
+          <div class="form-control" data-aos="fade-up-left" data-aos-duration="1500">
+            <input type="email" id="emailE" required />
+            <label for="emailE">Enter Parent's Email ID</label>
+          </div>
+
+          <div class="form-control" data-aos="fade-up-right" data-aos-duration="1500">
+            <input type="number" id="phoneE" required />
+            <label for="phoneE">Enter Parent's Phone No.</label>
+          </div>
+
+          <div class="form-control" data-aos="fade-up-right" data-aos-duration="1500">
+            <input type="number" id="phoneE" required />
+            <label for="phoneE">Enter Parent's Phone No.</label>
+          </div>
+
+          <div class="form-control" data-aos="fade-up-left" data-aos-duration="1500">
+            <div class="file-field input-field">
+              <div class="btn">
+                <span>Upload Profile Picture</span>
+                <input type="file">
+              </div>
+              <div class="file-path-wrapper">
+                <input class="file-path validate" type="text">
+              </div>
+          </div>
+
+          <div class="form-control" data-aos="fade-up-right" data-aos-duration="1500">
+            <div class="file-field input-field">
+              <div class="btn">
+                <span>Upload Income Certificate (If Required)</span>
+                <input type="file">
+              </div>
+              <div class="file-path-wrapper">
+                <input class="file-path validate" type="text">
+              </div>
+          </div>
+
+
+          <div class="form-control" data-aos="fade-up-left" data-aos-duration="1500">
+            <input type="password" id="password" required />
+            <label for="password"> Password</label>
+          </div>
+
+          <button class="button" data-aos="zoom-in-up" data-aos-duration="1500">Submit</button>
+          
+          <p class="text" style="margin-top: 20px;" data-aos="zoom-in" data-aos-duration="2000">Already have an account? <a href="student_login.html">Login</a><span style="margin-left:3rem"><a href="index1.html">Go Back</a></span></p>
         </form>
       </div>
 </div>

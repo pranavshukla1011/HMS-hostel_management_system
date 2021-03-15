@@ -1,1 +1,11 @@
+@import "variables.scss";
+
+$primary-color-form: $primary-color;
+
+body {
+  background: url("../img/landing-page/pexels-elijah-o'donnell-4066041.jpg")
+    no-repeat center center/cover;
+  height: 100%;
+  width: 100%;
+}
 
