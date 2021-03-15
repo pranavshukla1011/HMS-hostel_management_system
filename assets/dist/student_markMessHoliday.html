@@ -14,15 +14,19 @@
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 
     <!-- <link rel="stylesheet" href="css/utilities.css"> -->
-    <!-- <link rel="stylesheet" href="css/form.css"> -->
-
+    
+    <link rel="stylesheet" href="css/utilities.css">
+    <link rel="stylesheet" href="css/form.css">
     <link rel="stylesheet" href="css/student_page.css">
+    <link rel="stylesheet" href="css/student_complaint.css">
     <link rel="stylesheet" href="css/student_markMessHoliday.css">
-    <title>Data | Student</title>
+    <title>Mess Holiday | Student</title>
 </head>
-<body id="particles-js">
+<body>
+    <div id="particles-js" style="position: absolute; top:0; left:0; height:100%; width:100%;">
+    </div>
     <nav class="nav-wrapper grey darken-3 " id="student-page-nav" data-aos="fade-down">
-        <div class="container">
+        <div class="container" >
             <a href="#" class = "brand-logo left ">Welcome!</a>
             <a href="#" data-target="mobile-links" class="sidenav-trigger right"><i class="material-icons">menu</i></a>
             <ul class = "right show-on-large hide-on-med-and-down">
@@ -35,10 +39,11 @@
                 <img src="img/student_page/photo.jpg" alt="">
                 </li>
             </ul>
-            </ul>
         </div>
-    </nav>
 
+        
+    </nav>
+  
     <ul class="sidenav" id="mobile-links">
         <li class="profile-sidenav center-align">
             <img src="img/student_page/photo.jpg" alt="">
@@ -53,6 +58,70 @@
          <li><a href="#!">Admin Contact</a></li>
     </ul>
     
+    <div class="container">
+        <div class="row">
+            <div class="col s10" data-aos="fade-down" data-aos-duration="1000"  style="margin-top:70px;">
+              <div class="row" id="pickMessHoliday">
+                <form class="col s12" >
+                    <h4 class="black-text center"> <i class="fas fa-utensils black-text"></i> Apply Mess Leave <i class="fas fa-utensils black-text"></i></h4>
+                    <div class="row">
+                        <div class="col s8 offset-s2">
+                            <div class="input-field">
+                                <input type="text" class="datepicker" id="fromDate">
+                                <label for="#fromDate">From</label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col s8 offset-s2">
+                            <div class="input-field">
+                                <input type="text" class="datepicker" id="fromDate">
+                                <label for="#fromDate">To</label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col s8 offset-s2">
+                            <div class="input-field">
+                                <select>
+                                    <option value="" disabled selected>Absent from meal</option>
+                                    <option value="1">BreakFast</option>
+                                    <option value="2">Lunch</option>
+                                    <option value="3">Snacks</option>
+                                    <option value="3">Dinner</option>
+                                  </select>
+                                  <label>Leave starting from meal</label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col s8 offset-s2">
+                            <div class="input-field">
+                                <select>
+                                    <option value="" disabled selected>Absent till meal</option>
+                                    <option value="1">BreakFast</option>
+                                    <option value="2">Lunch</option>
+                                    <option value="3">Snacks</option>
+                                    <option value="3">Dinner</option>
+                                  </select>
+                                  <label>Leave ending at meal</label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col s8 offset-s5">
+                            <div class="input-field">
+                                <button type="submit" class="button">Mark Leave</button>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>  
+        </div>
+    </div>
     
 </div>
 <!-- Student Information -->
@@ -63,12 +132,23 @@
     <script src="js/form.js"></script>
     <script src="js/particles.js"></script>
     <script src="js/app.js"></script>
+    <script src=""></script>
     <script>
         var elem = document.querySelector('.sidenav');
         var instance = new M.Sidenav(elem);
         $(document).ready(function(){
           $('.tooltipped').tooltip();
         });
+        $(document).ready(function(){
+        $('.tabs').tabs();
+        });
+        $(document).ready(function(){
+        $('select').formSelect();
+        M.textareaAutoResize($('#complaintContent'));
+        });
+        $(document).ready(function(){
+        $('.datepicker').datepicker();
+         });
         AOS.init();  
         // var elem = document.querySelector('.sidenav');
         // var instance = new M.Sidenav(elem); 
