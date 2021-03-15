@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" integrity="sha512-HK5fgLBL+xu6dm/Ii3z4xhlSUyZgTT9tuc/hSrtw6uzJOvgRr2a9jyxxT1ely+B+xFAmJKVSTbpM/CuL7qxO8w==" crossorigin="anonymous" />
+    <!-- MaterializeCSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <!--Import Google Icon Font-->
+     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+     <!-- Animate on Scroll -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+    <!-- <link rel="stylesheet" href="css/utilities.css"> -->
+    <link rel="stylesheet" href="/dist/css/form.css">
+    <link rel="stylesheet" href="/dist/css/utilities.css">
+    <link rel="stylesheet" href="/dist/css/student_page.css">
+    <link rel="stylesheet" href="/dist/css/student_complaint.css">
+    <title><%= title %></title>
+</head>
+<body id="particles-js">
+    <nav class="nav-wrapper grey darken-3 " id="student-page-nav" data-aos="fade-down">
+        <div class="container" >
+            <a href="#" class = "brand-logo left ">Welcome!</a>
+            <a href="#" data-target="mobile-links" class="sidenav-trigger right"><i class="material-icons">menu</i></a>
+            <ul class = "right show-on-large hide-on-med-and-down">
+                <li><a href="student_page.html">Home</a></li>
+                <li><a href="student_markMessHoliday.html">Mess Leave</a></li>
+                <li><a href="student_markHoliday.html">Mark Holiday</a></li>
+                <li><a href="/complaints1/section">Complaint</a></li>
+                <li><a href="student_adminContacts.html">Admin Contact</a></li>
+                <li class="profile tooltipped" data-position="right" data-tooltip = "Pranav Shukla">
+                <img src="/dist/img/student_page/photo.jpg" alt="">
+                </li>
+            </ul>
+        </div>
+        <div class="container">
+            <div class="row" >
+                <div class="col s12" data-aos="fade-down" data-aos-duration="1000">
+                  <ul class="tabs">
+                    <li class="tab col s6 grey darken-2 white-text"><a href="#postComplaint" class=" active  white-text center" ><h6>Post Complaint</h6></a></li>
+                    <li class="tab col s6 grey darken-2 white-text" ><a class="white-text center" href="#viewComplaint"><h6>View Complaint</h6></a></li>
+                  </ul>
+                </div>
+
+
+                <!-- POST Complaint -->
+                <div id="postComplaint" class="col s12" data-aos="fade-up" data-aos-duration="1000">
+                    <div class="container" >
+                        <div class="row">
+                            <form class="col s12" action="/complaints/create" method="POST">
+                              <div class="row" data-aos="fade-up-right" data-aos-duration="1500">  
+                                    <div class="input-field col s12" id="complaintCatagory">
+                                        <h5 class="black-text" >Complaint Catagory</h5>
+                                        <select name="category">
+                                            <option class="black-text" value="Internet Problem">Internet Problem</option>
+                                            <option class="black-text" value="Mess Problem">Mess Problem</option>
+                                            <option class="black-text" value="Document Related Problem">Document Related Problem</option>
+                                            <option class="black-text" value="Others">Others</option>
+                                        </select>
+                                    </div>
+                               </div>
+    
+                                <div class="row" data-aos="fade-up-left" data-aos-duration="1500" style="margin-top: 130px;">  
+                                    <div class="input-field col s12" id="complaintType">
+                                        <h5 class="black-text" >Complaint Type</h5>
+                                        <select name="ctype">
+                                            <option class="black-text" value="Public">Public</option>
+                                            <option value="Anonymous" class="black-text">Anonymous</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                
+                                <div class="row" data-aos="fade-up-left" data-aos-duration="1500" style="margin-top: 60px;">  
+                                    <div class="input-field col s12" id="complaintType">
+                                        <h5 class="black-text" >Complaint Visibility</h5>
+                                        <select name="visibility">
+                                            <option class="black-text" value="1">Share my complaint with other hostellers</option>
+                                            <option value="2" class="black-text">Do not share my complaint</option>
+                                        </select>
+                                    </div>
+                                </div>
+
+                                <div class="row" data-aos="fade-up-right" data-aos-duration="1500" style="margin-top: 60px;">  
+                                        
+                                        <div class="input-field col s12">
+                                            <h5 class="black-text">Enter Complaint</h5>
+                                           <div class="input-field">
+                                            <textarea name="content" id="complaintContent" class="materialize-textarea"></textarea>
+                                           </div>
+                                          
+                                        </div>
+                                </div>
+                                
+                                
+                                <div class="row" data-aos="fade-up" data-aos-duration="1500">
+                                    <div class="col s12">
+                                     <button class="button" type="submit">Post Complaint</button></button>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>  
+                    </div>
+                </div>
+
+
+                <!-- VIEW COMPLAINT -->
+
+                <div id="viewComplaint" class="col s12">
+
+                    <div class="row">
+                        <div class="col s12" style = "margin-top: 40px;" >
+                            <ul class="tabs">
+                            <li class="tab col s6 grey darken-2 white-text"><a href="#public-complaints" class=" active  white-text center" ><h6>Public Complaint</h6></a></li>
+                            <li class="tab col s6 grey darken-2 white-text" ><a class="white-text center" href="#anonymous-complaint"><h6>Anonymous Complaint</h6></a></li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <% if(complaints <= 0) {%>
+                        <div style="color: black; background-color: #616161;">
+                            <h5>NO COMPLAINT</h5>
+                        </div>
+                    <%}%>   
+
+                    <% for(complaint of complaints){  %>
+                        <% if(complaint.visibility == 1){%>
+                            <% if(complaint.ctype == 'Public' ){%>
+                            <div id="public-complaints">
+                                
+                                <div class=" complaintCard public solved-complaint  container white" >
+                                    <div class="complaintImg">
+                                        <img src="/dist/img/student_page/photo.jpg" class="responsive-img" alt="">
+                                    </div>
+                                    <div class="complaintCard-content">
+                                        <h6  class="black-text"><%= complaint.student.name %></h6>
+                                        <h5 class="black-text"><%= complaint.category %></h5>
+                                        <p class="black-text"><%= complaint.content %></p>
+                                        <div class="complaintSocial">
+                                            <span class="upvote btn-small"><i class="far fa-heart left" ></i> 20 Upvote</span>
+
+
+                                            <% if(complaint.status == 1){%>
+                                            <span class="solved btn-small"><i class="fas fa-check-double left"></i>Solved</span>
+                                            <% }else if(complaint.status == 2) {%>
+                                            <span class="solved btn-small"><i class="fas fa-check-double left"></i>On Progress</span>
+                                            <%}else{ %>
+                                            <span class="unsolved btn-small"><i class="fas fa-exclamation-circle left"></i>Un-Solved</span>
+                                            <% } %> 
+
+
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                            <% }else{ %>
+                            <div id="anonymous-complaint">
+                                
+
+                                <div class=" complaintCard anonymous public solved-complaint  container white" >
+                                    <div class="complaintImg">
+                                        <img src="/dist/img/student_complaint/anonymous.jpeg.svg" class="responsive-img" alt="">
+                                    </div>
+                                    <div class="complaintCard-content">
+                                        <h6  class="black-text">Anonymous</h6>
+                                        <h5 class="black-text"><%= complaint.category%></h5>
+                                        <p class="black-text"><%= complaint.content%></p>
+                                        <div class="complaintSocial">
+                                            <span class="upvote btn-small"><i class="far fa-heart left" ></i> 20 Upvote</span>
+
+
+                                            <% if(complaint.status == 1){%>
+                                            <span class="solved btn-small"><i class="fas fa-check-double left"></i>Solved</span>
+                                            <% }else if(complaint.status == 2) {%>
+                                            <span class="solved btn-small"><i class="fas fa-check-double left"></i>On Progress</span>
+                                            <%}else{ %>
+                                            <span class="unsolved btn-small"><i class="fas fa-exclamation-circle left"></i>Un-Solved</span>
+                                            <% } %>  
+
+                                            
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                            <% }}} %>
+                     
+
+
+                    
+                </div>
+            </div>
+        </div>
+    
+    </nav>
+    
+  
+    <ul class="sidenav" id="mobile-links">
+        <li class="profile-sidenav center-align">
+            <img src="/dist/img/student_page/photo.jpg" alt="">
+         </li>
+         <li class="center-align">
+            <h5 class="black-text ">Pranav Shukla</h5>
+            </li>
+         <li><a href="student_page.html">Home</a></li>
+         <li><a href="#!">Mark attendence</a></li>
+         <li><a href="#!">Mark Holiday</a></li>
+         <li><a href="#!">Complaint</a></li>
+         <li><a href="#!">Admin Contact</a></li>
+    </ul>
+    
+    
+</div>
+<!-- Student Information -->
+     
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="/dist/js/form.js"></script>
+    <script src="/dist/js/particles.js"></script>
+    <script src="/dist/js/app.js"></script>
+    <script src=""></script>
+    <script>
+        var elem = document.querySelector('.sidenav');
+        var instance = new M.Sidenav(elem);
+        $(document).ready(function(){
+          $('.tooltipped').tooltip();
+        });
+        $(document).ready(function(){
+        $('.tabs').tabs();
+        });
+        $(document).ready(function(){
+        $('select').formSelect();
+        M.textareaAutoResize($('#complaintContent'));
+  });
+        AOS.init();  
+        // var elem = document.querySelector('.sidenav');
+        // var instance = new M.Sidenav(elem); 
+
+        // $(document).ready(function(){
+        //     $('.tabs').tabs();
+        // });
+        // $(document).ready(function(){
+        //     $('.tabs').tabs('select_tab', 'tab_id');
+        // });
+
+        // $(document).ready(function(){
+        // $('.modal').modal();
+        // });
+    </script>
+</body>
+</html>
