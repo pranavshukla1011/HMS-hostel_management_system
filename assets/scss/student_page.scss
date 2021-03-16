@@ -1,3 +1,5 @@
+
+
 .profile{
   a:hover {
     background-color: rgba(0,0,0,0.0);
@@ -54,12 +56,68 @@
 
 #particles-js {
   background-color: #333;
+  z-index:-1;
+}
+
+// .home-container{
+//   display: grid;
+//   grid-template-areas: 
+//     'home1' 'home2'
+//   ;
+// }
+
+// .home1{
+//   grid-area: 'home1';
+//   display:grid;
+//   grid-template-areas: 
+//     'hostel-updates'
+//   ;
+// }
+
+// .home2{
+//   grid-area: 'home2';
+  
+// }
+
+
+.home1, .home2{
   height:100%;
+  width:45%;
+  border-radius: 10% 10% 0 0;
 }
 
-.page-footer {
-  position: absolute;
-  bottom: 0;
-  width: 100vw;
+table{
+  overflow: auto;
+  & tr > td{
+    font-weight: bold;
+  }
 }
 
+.home-container{
+  height:100%;
+  width:100%;
+  display:flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.hostel-updates{
+  ul{
+    max-height:42vh;
+    width:100%;
+    overflow-y:auto;
+  }
+  .collection .collection-item {
+    background-color: #fff;
+    line-height: 3rem;
+    padding: 10px 20px;
+    margin: 0;
+    border-bottom:none;
+  }
+}
+
+
+
+.home-container{
+  margin-top: 5rem;
+}
