@@ -160,7 +160,11 @@
                                             <% } %> 
 
 
+                                            
                                         </div>
+                                            <% if(locals.user && locals.user.id == complaint.student.id) {%>
+                                            <a href="/complaints/destroy/<%= complaint.id%>"><span class="solved btn-small">Delete</span></a>
+                                            <% } %>
                                     </div>
                                 </div>
 
@@ -189,6 +193,10 @@
 
                                             
                                         </div>
+
+                                        <% if(locals.user && locals.user.id == complaint.student.id) {%>
+                                            <a href="/complaints/destroy/<%= complaint.id%>"><span class="solved btn-small">Delete</span></a>
+                                            <% } %>
                                     </div>
                                 </div>
                             </div>
