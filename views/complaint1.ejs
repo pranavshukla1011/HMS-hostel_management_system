@@ -13,6 +13,11 @@
      <!-- Animate on Scroll -->
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 
+     <!-- noty js -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/noty/3.1.4/noty.min.css"> 
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/noty/3.1.4/noty.min.js"></script>
+  
+
     <!-- <link rel="stylesheet" href="css/utilities.css"> -->
     <link rel="stylesheet" href="/dist/css/form.css">
     <link rel="stylesheet" href="/dist/css/utilities.css">
@@ -215,6 +220,7 @@
     
 </div>
 <!-- Student Information -->
+    
      
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
@@ -223,6 +229,7 @@
     <script src="/dist/js/particles.js"></script>
     <script src="/dist/js/app.js"></script>
     <script src=""></script>
+
     <script>
         var elem = document.querySelector('.sidenav');
         var instance = new M.Sidenav(elem);
@@ -251,5 +258,29 @@
         // $('.modal').modal();
         // });
     </script>
+
+<script>
+    <% if(flash.success && flash.success.length > 0){ %>
+    new Noty({
+        theme: "relax",
+        text: "<%= flash.success %>",
+        type: "success",
+        layout: 'topRight',
+        timeout: 1500,
+        
+    }).show();
+    <% } %> 
+    
+    <% if(flash.error && flash.error.length > 0){ %>
+    new Noty({
+        theme: "relax",
+        text: "<%= flash.error %>",
+        type: "error",
+        layout: 'topRight',
+        timeout: 1500,
+        
+    }).show();
+    <% } %>
+</script> 
 </body>
 </html>

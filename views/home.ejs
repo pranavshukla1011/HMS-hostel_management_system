@@ -13,6 +13,10 @@
      <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css?family=Montserrat:300,400,500,600,700&display=swap" rel="stylesheet">
 
+  <!-- noty js -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/noty/3.1.4/noty.min.css"> 
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/noty/3.1.4/noty.min.js"></script>
+  
    <!-- Animate on Scroll -->
    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
    <!-- Other css -->
@@ -26,7 +30,7 @@
         <a href="#" class="brand-logo center"><i class="fas fa-hotel"></i>HMS</a>
     </nav>
     <div class="split left">
-      
+     
       <img src="/dist/img/landing-page/pexels-cottonbro-5137788.jpg" alt="" class="student">
       <div class="overlay" >
         <div class="text" >
@@ -51,6 +55,31 @@
     </div>
   </div>
 </body>
+
+
+<script>
+  <% if(flash.success && flash.success.length > 0){ %>
+     new Noty({
+         theme: "relax",
+         text: "<%= flash.success %>",
+         type: "success",
+         layout: 'topRight',
+         timeout: 1500,
+         
+     }).show();
+   <% } %> 
+   
+   <% if(flash.error && flash.error.length > 0){ %>
+     new Noty({
+         theme: "relax",
+         text: "<%= flash.error %>",
+         type: "error",
+         layout: 'topRight',
+         timeout: 1500,
+         
+     }).show();
+   <% } %> 
+</script>   
   <script></script>
   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
   <script src="/dist/js/index.js"></script>

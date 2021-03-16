@@ -35,9 +35,11 @@ module.exports.create = async function(req, res){
         student: req.user._id,
          });
 
+        req.flash('success','Complaint posted!'); 
         return res.redirect('back');
   
     } catch (error) {
+        req.flash('error', err);
         return res.redirect('back');
         
     }

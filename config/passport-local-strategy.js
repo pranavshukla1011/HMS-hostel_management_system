@@ -9,18 +9,20 @@ const Student = require('../models/student');
 //    });
 
 passport.use(new LocalStrategy({
-        usernameField: 'regNo'
+        usernameField: 'regNo',
+        passReqToCallback: true
     },
-    function(regNo, password, done){
+    function(req, regNo, password, done){
         //find a user and establish the identity
         Student.findOne({regNo: regNo},function(err, student){
                 if(err){
-                    console.log('Error in finding user----->Passport');
+                    req.flash('error', err);
                     return done(err);
 
                 }
                 if(!student || student.password != password){
-                    console.log('Invalid Username/Password');
+                    
+                    req.flash('error','Invalid Username/Password');
                     return done(null, false);
                 }
 

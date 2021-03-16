@@ -14,12 +14,18 @@
      <!-- Animate on Scroll -->
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 
+    <!-- noty js -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/noty/3.1.4/noty.min.css"> 
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/noty/3.1.4/noty.min.js"></script>
+  
+
     <!-- <link rel="stylesheet" href="css/utilities.css"> -->
     <link rel="stylesheet" href="/dist/css/form.css">
     <link rel="stylesheet" href="/dist/css/student_page.css">
     <title><%= title %></title>
 </head>
 <body id="particles-js">
+  
     <nav class="nav-wrapper grey darken-3 " id="student-page-nav" data-aos="fade-down">
         <div class="container">
             <a href="#" class = "brand-logo left ">Welcome!</a>
@@ -110,7 +116,29 @@
     
 </div>
 <!-- Student Information -->
+<script>
+    <% if(flash.success && flash.success.length > 0){ %>
+       new Noty({
+           theme: "relax",
+           text: "<%= flash.success %>",
+           type: "success",
+           layout: 'topRight',
+           timeout: 1500,
+           
+       }).show();
+     <% } %> 
      
+     <% if(flash.error && flash.error.length > 0){ %>
+       new Noty({
+           theme: "relax",
+           text: "<%= flash.error %>",
+           type: "error",
+           layout: 'topRight',
+           timeout: 1500,
+           
+       }).show();
+     <% } %> 
+  </script> 
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>

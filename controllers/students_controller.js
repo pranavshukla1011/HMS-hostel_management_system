@@ -66,10 +66,12 @@ module.exports.create = function(req, res){
 module.exports.createSession = function(req, res){
     //session is created in passport.js itself
     //user is signed in so we just need to redirect
+    req.flash('success','Logged in Successfully');
     return res.redirect('/students/student-home');
 }
 
 module.exports.destroySession = function(req, res){
     req.logout();//this function is give to req by passport.js
+    req.flash('success','You have Logged out!');
     return res.redirect('/');
 }
