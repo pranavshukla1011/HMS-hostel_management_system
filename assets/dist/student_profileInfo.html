@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" integrity="sha512-HK5fgLBL+xu6dm/Ii3z4xhlSUyZgTT9tuc/hSrtw6uzJOvgRr2a9jyxxT1ely+B+xFAmJKVSTbpM/CuL7qxO8w==" crossorigin="anonymous" />
+    <!-- MaterializeCSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <!--Import Google Icon Font-->
+     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+     <!-- Animate on Scroll -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+    <!-- <link rel="stylesheet" href="css/utilities.css"> -->
+    <link rel="stylesheet" href="css/form.css">
+    <link rel="stylesheet" href="css/student_page.css">
+    <title>Data | Student</title>
+</head>
+<body id="particles-js">
+    <nav class="nav-wrapper grey darken-3 " id="student-page-nav" data-aos="fade-down">
+        <div class="container">
+            <a href="#" class = "brand-logo left ">Profile</a>
+            <a href="#" data-target="mobile-links" class="sidenav-trigger right"><i class="material-icons">menu</i></a>
+            <ul class = "right show-on-large hide-on-med-and-down">
+                <li><a href="student_page.html">Home</a></li>
+                <li><a href="student_markMessHoliday.html">Mess Leave</a></li>
+                <li><a href="student_markHoliday.html">Mark Holiday</a></li>
+                <li><a href="student_complaint.html">Complaint</a></li>
+                <li><a href="student_adminContacts.html">Admin Contact</a></li>
+                <!-- <li class="profile tooltipped" data-position="right" data-tooltip = "Pranav Shukla">
+                    <a href="student"></a>
+                </li> -->
+                <li class="profile tooltipped" data-position="right" data-tooltip = "Pranav Shukla"><a href="student_profileInfo.html"><img src="img/student_page/photo.jpg" alt=""></a></li>
+            </ul>
+            </ul>
+        </div>
+
+        <ul id='dropdown1' class='dropdown-content'>
+    <li><a href="#!">one</a></li>
+    <li><a href="#!">two</a></li>
+    <li class="divider" tabindex="-1"></li>
+    <li><a href="#!">three</a></li>
+    <li><a href="#!"><i class="material-icons">view_module</i>four</a></li>
+    <li><a href="#!"><i class="material-icons">cloud</i>five</a></li>
+  </ul>
+    </nav>
+
+
+    <ul class="sidenav" id="mobile-links">
+        <li class="profile-sidenav center-align">
+            <img src="img/student_page/photo.jpg" alt="">
+         </li>
+         <li class="center-align">
+            <h5 class="black-text ">Pranav Shukla</h5>
+            </li>
+         <li><a href="student_page.html">Home</a></li>
+         <li><a href="#!">Mark attendence</a></li>
+         <li><a href="#!">Mark Holiday</a></li>
+         <li><a href="#!">Complaint</a></li>
+         <li><a href="#!">Admin Contact</a></li>
+    </ul>
+    
+    <div id="content-student-page">
+        <div class="container" data-aos="zoom-in" >
+            <div class="row card">
+                <div class="card-content">
+                    <div class="row">
+                        <div class="col xs7 s4 m6" data-aos="fade-right" data-aos-duration="1500" >
+                            <img src="img/student_page/photo.jpg" alt="profile pic" class="responsive-img">
+                        </div>
+                        <div class="col xs5 s8 m6" data-aos="fade-left" data-aos-duration="1500" >
+                            <div class="row">
+                                <div class="col s12 ">
+                                    <ul class="collection">
+                                        <li class="collection-item">
+                                            <h6 class="black-text" style="display: inline;text-decoration: underline;">Reg No. :</h6>
+                                            <span class="black-text" style="margin-left:10px">1111111</span>
+                                        </li>
+                                        <li class="collection-item">
+                                            <h6 class="black-text" style="display: inline;text-decoration: underline;">Student's Name :</h6>
+                                            <span class="black-text" style="margin-left:10px">John Doe</span>
+                                        </li>
+                                        <li class="collection-item">
+                                            <h6 class="black-text" style="display: inline;text-decoration: underline;">Mother's Name :</h6>
+                                            <span class="black-text" style="margin-left:10px">Gracy Doe</span>
+                                        </li>
+                                        <li class="collection-item">
+                                            <h6 class="black-text" style="display: inline;text-decoration: underline;">Father's Name :</h6>
+                                            <span class="black-text" style="margin-left:10px">Mark Doe</span>
+                                        </li>
+                                        <li class="collection-item">
+                                            <h6 class="black-text" style="display: inline;text-decoration: underline;">Hostel :</h6>
+                                            <span class="black-text" style="margin-left:10px">MBH A</span>
+                                        </li>
+                                        <li class="collection-item">
+                                            <h6 class="black-text" style="display: inline;text-decoration: underline;">Branch :</h6>
+                                            <span class="black-text" style="margin-left:10px">Instrumentation and Control Engineering</span>
+                                        </li>
+                                        <li class="collection-item">
+                                            <h6 class="black-text" style="display: inline;text-decoration: underline;">DOB :</h6>
+                                            <span class="black-text" style="margin-left:10px">01-Jan-0001</span>
+                                        </li>
+                                        <li class="collection-item">
+                                            <h6 class="black-text" style="display: inline;text-decoration: underline;">Batch :</h6>
+                                            <span class="black-text" style="margin-left:10px">2018</span>
+                                        </li>
+                                        <li class="collection-item">
+                                            <h6 class="black-text" style="display: inline;text-decoration: underline;">Contact No.1 :</h6>
+                                            <span class="black-text" style="margin-left:10px">555-555-5555</span>
+                                        </li>
+                                        <li class="collection-item">
+                                            <h6 class="black-text" style="display: inline;text-decoration: underline;">Contact No.2 :</h6>
+                                            <span class="black-text" style="margin-left:10px">555-555-5556</span>
+                                        </li>
+                                        <li class="collection-item">
+                                            <h6 class="black-text" style="display: inline;text-decoration: underline;">Contact No.3 :</h6>
+                                            <span class="black-text" style="margin-left:10px">555-555-5557</span>
+                                        </li>
+                                        <li class="collection-item">
+                                            <h6 class="black-text" style="display: inline;text-decoration: underline;">Email1 :</h6>
+                                            <span class="black-text" style="margin-left:10px">johndoe@nitj.ac.in</span>
+                                        </li>
+                                        <li class="collection-item">
+                                            <h6 class="black-text" style="display: inline;text-decoration: underline;">Email2 :</h6>
+                                            <span class="black-text" style="margin-left:10px">johndoe1@gmail.com</span>
+                                        </li>
+                                        <li class="collection-item">
+                                            <h6 class="black-text" style="display: inline;text-decoration: underline;">Email3 :</h6>
+                                            <span class="black-text" style="margin-left:10px">gracydoe@gmail.com</span>
+                                        </li>
+
+                                        <li class="collection-item">
+                                            <a class="btn grey darken-3" href="">Open Income Certificate </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div> 
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+    
+</div>
+<!-- Student Information -->
+     
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="js/form.js"></script>
+    <script src="js/particles.js"></script>
+    <script src="js/app.js"></script>
+    <script>
+        var elem = document.querySelector('.sidenav');
+        var instance = new M.Sidenav(elem);
+        $(document).ready(function(){
+          $('.tooltipped').tooltip();
+        });
+        AOS.init();  
+        // var elem = document.querySelector('.sidenav');
+        // var instance = new M.Sidenav(elem); 
+
+        // $(document).ready(function(){
+        //     $('.tabs').tabs();
+        // });
+        // $(document).ready(function(){
+        //     $('.tabs').tabs('select_tab', 'tab_id');
+        // });
+
+        // $(document).ready(function(){
+        // $('.modal').modal();
+        // });
+    </script>
+</body>
+</html>
