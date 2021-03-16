@@ -45,9 +45,36 @@
 
 #particles-js {
   background-color: #333;
-  height: 100%; }
+  z-index: -1; }
 
-.page-footer {
-  position: absolute;
-  bottom: 0;
-  width: 100vw; }
+.home1, .home2 {
+  height: 100%;
+  width: 45%;
+  border-radius: 10% 10% 0 0; }
+
+table {
+  overflow: auto; }
+  table tr > td {
+    font-weight: bold; }
+
+.home-container {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center; }
+
+.hostel-updates ul {
+  max-height: 42vh;
+  width: 100%;
+  overflow-y: auto; }
+
+.hostel-updates .collection .collection-item {
+  background-color: #fff;
+  line-height: 3rem;
+  padding: 10px 20px;
+  margin: 0;
+  border-bottom: none; }
+
+.home-container {
+  margin-top: 5rem; }
