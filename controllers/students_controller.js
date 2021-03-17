@@ -49,7 +49,8 @@ module.exports.markHoliday = function(req,res){
 module.exports.create = function(req, res){
     
     if(req.body.password !== req.body.confirm_password){
-        console.log("password unmactched");
+        console.log("password unmatched");
+        req.flash('error', 'Passwords Unmatched');
         return res.redirect('back');
     }
     Student.findOne({regNo: req.body.regNo}, function(err, student){
@@ -61,10 +62,11 @@ module.exports.create = function(req, res){
             Student.create(req.body, function(err, student){
                 if(err){console.log('error in creating user while signing up |', err); return}
                 
-                
+                req.flash('Signned Up Successfully');
                 return res.redirect('/students/sign-in');
             })
         }else{
+            req.flash('error','Student Already Exist With this Reg No.');
             console.log("Student Already Exist With this Reg No.");
             return res.redirect('back');
         }

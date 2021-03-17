@@ -11,7 +11,9 @@
      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
      <!--Import Google Icon Font-->
       <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-
+<!-- noty js -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/noty/3.1.4/noty.min.css"> 
+<script src="https://cdnjs.cloudflare.com/ajax/libs/noty/3.1.4/noty.min.js"></script>
       <!-- CSS files -->
     <link rel="stylesheet" href="/dist/css/utilities.css">
     <link rel="stylesheet" href="/dist/css/form.css">
@@ -184,6 +186,29 @@
      AOS.init();
     </script>
     <script src="/dist/js/form.js"></script>
+    <script>
+      <% if(flash.success && flash.success.length > 0){ %>
+         new Noty({
+             theme: "relax",
+             text: "<%= flash.success %>",
+             type: "success",
+             layout: 'topRight',
+             timeout: 1500,
+             
+         }).show();
+       <% } %> 
+       
+       <% if(flash.error && flash.error.length > 0){ %>
+         new Noty({
+             theme: "relax",
+             text: "<%= flash.error %>",
+             type: "error",
+             layout: 'topRight',
+             timeout: 1500,
+             
+         }).show();
+       <% } %> 
+    </script> 
     
 </body>
 </html>
