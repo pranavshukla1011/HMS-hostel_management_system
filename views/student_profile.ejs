@@ -32,15 +32,16 @@
             <a href="#" data-target="mobile-links" class="sidenav-trigger right"><i class="material-icons">menu</i></a>
             <ul class = "right show-on-large hide-on-med-and-down">
                 <li><a href="/students/student-home">Home</a></li>
-                <li><a href="student_markAttendence.html">Mark attendence</a></li>
-                <li><a href="student_markHoliday.html">Mark Holiday</a></li>
+                <li><a href="/students/mess-leave">Mess Leave</a></li>
+                <li><a href="/students/mark-holiday">Mark Holiday</a></li>
                 <li><a href="/complaints/section">Complaint</a></li>
                 <li><a href="student_adminContacts.html">Admin Contact</a></li>
                 <% if (locals.user){ %>
                   <li><a href="/students/sign-out">Sign Out</a></li>
                 <% } %>
-                <li class="profile tooltipped" data-position="right" data-tooltip = <%= user.name %>>
-                <img src="/dist/img/student_page/photo.jpg" alt="">
+               
+                <li class="profile tooltipped" data-position="right" data-tooltip = "<%= user.name %>">
+                    <a href="/students/profile"><img src="/dist/img/student_page/photo.jpg" alt=""></a>
                 </li>
             </ul>
         </div>
@@ -78,27 +79,27 @@
                                         </li>
                                         <li class="collection-item">
                                             <h6 class="black-text" style="display: inline;text-decoration: underline;">Hostel :</h6>
-                                            <span class="black-text" style="margin-left:10px">MBH A</span>
+                                            <span class="black-text" style="margin-left:10px"><%= user.hostel%></span>
                                         </li>
                                         <li class="collection-item">
                                             <h6 class="black-text" style="display: inline;text-decoration: underline;">Branch :</h6>
-                                            <span class="black-text" style="margin-left:10px">Instrumentation and Control Engineering</span>
+                                            <span class="black-text" style="margin-left:10px"><%= user.branch%></span>
                                         </li>
                                         <li class="collection-item">
                                             <h6 class="black-text" style="display: inline;text-decoration: underline;">Batch :</h6>
-                                            <span class="black-text" style="margin-left:10px">2018</span>
+                                            <span class="black-text" style="margin-left:10px"><%= user.batch%></span>
                                         </li>
                                         <li class="collection-item">
                                             <h6 class="black-text" style="display: inline;text-decoration: underline;">Mobile No :</h6>
-                                            <span class="black-text" style="margin-left:10px">6388195417</span>
+                                            <span class="black-text" style="margin-left:10px"><%= user.phone1%></span>
                                         </li>
                                         <li class="collection-item">
                                             <h6 class="black-text" style="display: inline;text-decoration: underline;">Email1 :</h6>
-                                            <span class="black-text" style="margin-left:10px">pranavs.ic.18@nitj.ac.in</span>
+                                            <span class="black-text" style="margin-left:10px"><%= user.email %></span>
                                         </li>
                                         <li class="collection-item">
                                             <h6 class="black-text" style="display: inline;text-decoration: underline;">Email2 :</h6>
-                                            <span class="black-text" style="margin-left:10px"><%= user.email %></span>
+                                            <span class="black-text" style="margin-left:10px"><%= user.email2 %></span>
                                         </li>
                                         <li class="collection-item">
                                             <h6 class="black-text" style="display: inline;text-decoration: underline;">Mess Amt :</h6>
