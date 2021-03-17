@@ -14,7 +14,7 @@ module.exports.signUp = function(req, res){
     if(req.isAuthenticated()){
         return res.redirect('/students/profile');
     }
-    return res.render('student_sign_up',{
+    return res.render('student_sign_up_2',{
         title:"HMS | Sign Up"
     })
 }
@@ -31,8 +31,18 @@ module.exports.signIn = function(req, res){
 }
 //render student home page
 module.exports.studentHome = function(req,res){
-    return res.render('student_home',{
+    return res.render('student_home_2',{
         title: "Student | Home"
+    })
+}
+module.exports.messLeave = function(req,res){
+    return res.render('student_mess_leave',{
+        title: "Student | Mess Leave"
+    })
+}
+module.exports.markHoliday = function(req,res){
+    return res.render('student_mark_holiday',{
+        title: "Student | Mark Holiday"
     })
 }
 //get the sign up data
